@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7560A0AD-14DF-465B-8697-4F411685855C}</ProjectGuid>
+    <ProjectGuid>{8F1523DE-1ACE-48A3-B3F7-5592E3BA69F9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SalaryReviewCalculationCSharp</RootNamespace>
-    <AssemblyName>SalaryReviewCalculationCSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>Salary_Review_Calculation</RootNamespace>
+    <AssemblyName>Salary-Review-Calculation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,19 +47,28 @@
   <ItemGroup>
     <Compile Include="Calculator\Impact.cs" />
     <Compile Include="Calculator\ReviewCalculator.cs" />
+    <Compile Include="Calculator\Role.cs" />
     <Compile Include="Calculator\Score.cs" />
-    <Compile Include="Component\CTO.cs" />
-    <Compile Include="Component\Developer.cs" />
-    <Compile Include="Component\Employee.cs" />
-    <Compile Include="Component\EmployeeWithSubordinate.cs" />
-    <Compile Include="Component\HasSubordinate.cs" />
-    <Compile Include="Component\Projectmanager.cs" />
-    <Compile Include="Component\TeamLead.cs" />
+    <Compile Include="Common\EmployeeInfo.cs" />
+    <Compile Include="Common\EmployeeInfoImpl.cs" />
+    <Compile Include="Common\Identity.cs" />
+    <Compile Include="Common\ReviewSystem.cs" />
+    <Compile Include="Composite\AbstractEmployee.cs" />
+    <Compile Include="Composite\CefaloReviewSystem.cs" />
+    <Compile Include="Composite\CompositeEmployeeHof.cs" />
+    <Compile Include="Composite\Developer.cs" />
+    <Compile Include="Composite\Employee.cs" />
+    <Compile Include="Functional\GenericReviewSystem.cs" />
+    <Compile Include="Generic\CompositeTree.cs" />
+    <Compile Include="Generic\Node.cs" />
+    <Compile Include="Generic\Tree.cs" />
+    <Compile Include="Generic\TreeNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
