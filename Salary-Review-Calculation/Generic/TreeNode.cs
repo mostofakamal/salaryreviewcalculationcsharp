@@ -3,8 +3,6 @@ using System.Linq;
 
 namespace Salary_Review_Calculation.Generic
 {
-    using Newtonsoft.Json;
-
     public class TreeNode<T> : Node<T>
     {
         private T data;
