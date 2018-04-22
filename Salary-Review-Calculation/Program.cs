@@ -1,11 +1,12 @@
-﻿namespace Salary_Review_Calculation
+﻿using Salary_Review_Calculation.Functional;
+
+namespace Salary_Review_Calculation
 {
     using System;
 
-    using Salary_Review_Calculation.Calculator;
-    using Salary_Review_Calculation.Common;
-    using Salary_Review_Calculation.Composite;
-    using Salary_Review_Calculation.Functional;
+    using Calculator;
+    using Common;
+    using Composite;
 
     class Program
     {
@@ -20,7 +21,8 @@
             Score badScore = new Score(5, 5, 5, 5, 6);
 
             ReviewSystem reviewSystem = new GenericReviewSystem();
-           // ReviewSystem reviewSystem = new CefaloReviewSystem();
+            //ReviewSystem reviewSystem = new CefaloReviewSystem();
+
             Console.WriteLine(reviewSystem);
             EmployeeInfo cto = reviewSystem.create(1, "john the cto", Role.CTO, 100000, goodScore);
 

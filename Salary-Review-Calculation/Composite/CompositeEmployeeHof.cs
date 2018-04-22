@@ -5,9 +5,9 @@ namespace Salary_Review_Calculation.Composite
 {
     using System.Linq;
 
-    using Salary_Review_Calculation.Calculator;
+    using Calculator;
 
-    public class CompositeEmployeeHof : AbstractEmployee
+    public class CompositeEmployeeHof : EmployeeImpl
     {
         private List<Employee> employees = new List<Employee>();
 
@@ -15,17 +15,17 @@ namespace Salary_Review_Calculation.Composite
         {
         }
 
-        public override void add(Employee employee)
+        public void add(Employee employee)
         {
             employees.Add(employee);
         }
 
-        public override Employee getChild(int i)
+        public Employee getChild(int i)
         {
             return employees.Single(e => e.getId() == i);
         }
 
-        public override double calculateGroupSalary()
+        public double calculateGroupSalary()
         {
             return fold(calculateSalary(), emp => emp.calculateGroupSalary(), (a, b) => a + b);
         }
@@ -55,7 +55,7 @@ namespace Salary_Review_Calculation.Composite
             return result;
         }
 
-        public override void remove(Employee employee)
+        public void remove(Employee employee)
         {
             //todo this is not the correct way, since it may remove an employee with his subordinates, which we don't want
             employees.Remove(employee);

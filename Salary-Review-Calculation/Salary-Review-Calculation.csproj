@@ -50,10 +50,9 @@
     <Compile Include="Common\EmployeeInfoImpl.cs" />
     <Compile Include="Common\Identity.cs" />
     <Compile Include="Common\ReviewSystem.cs" />
-    <Compile Include="Composite\AbstractEmployee.cs" />
+    <Compile Include="Composite\EmployeeImpl.cs" />
     <Compile Include="Composite\CefaloReviewSystem.cs" />
     <Compile Include="Composite\CompositeEmployeeHof.cs" />
-    <Compile Include="Composite\Developer.cs" />
     <Compile Include="Composite\Employee.cs" />
     <Compile Include="Functional\GenericReviewSystem.cs" />
     <Compile Include="Generic\CompositeTree.cs" />

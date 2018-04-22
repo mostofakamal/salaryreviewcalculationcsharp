@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Salary_Review_Calculation.Composite
 {
-    using Salary_Review_Calculation.Calculator;
-    using Salary_Review_Calculation.Common;
+    using Calculator;
+    using Common;
 
     public class CefaloReviewSystem : ReviewSystem
     {
@@ -16,7 +16,7 @@ namespace Salary_Review_Calculation.Composite
             Employee emp;
             if (role == Role.DEVELOPER)
             {
-                emp = new Developer(id, name, role, salary, score);
+                emp = new EmployeeImpl(id, name, role, salary, score);
             }
             else
             {

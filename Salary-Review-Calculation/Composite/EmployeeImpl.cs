@@ -2,9 +2,9 @@
 
 namespace Salary_Review_Calculation.Composite
 {
-    using Salary_Review_Calculation.Calculator;
+    using Calculator;
 
-    public abstract class AbstractEmployee : Employee
+    public class EmployeeImpl : Employee
     {
         private int id;
         private String name;
@@ -12,7 +12,7 @@ namespace Salary_Review_Calculation.Composite
         private Role role;
         private Score score;
 
-        protected AbstractEmployee(int id, String name, Role role, double salary, Score score)
+        public EmployeeImpl(int id, String name, Role role, double salary, Score score)
         {
             this.id = id;
             this.name = name;
@@ -21,13 +21,24 @@ namespace Salary_Review_Calculation.Composite
             this.score = score;
         }
 
-        public abstract void add(Employee employee);
+        public void add(Employee employee)
+        {
+           //this is leaf node so this method is not applicable to this class.
+
+        }
 
 
-        public abstract void remove(Employee employee);
+        public void remove(Employee employee)
+        {
+            //this is leaf node so this method is not applicable to this class.
+        }
 
 
-        public abstract Employee getChild(int i);
+        public Employee getChild(int i)
+        {
+            //this is leaf node so this method is not applicable to this class.
+             return null;
+        }
        
 
         public double calculateSalary()
@@ -36,7 +47,10 @@ namespace Salary_Review_Calculation.Composite
             return reviewCalculator.calculate();
         }
 
-        public abstract double calculateGroupSalary();
+        public double calculateGroupSalary()
+        {
+            return calculateSalary();
+        }
 
         public String getName()
         {
